@@ -9,6 +9,7 @@ import { ProductModule } from './products/product.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductAddComponent } from './products/product-add.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'prdduct-add', component: ProductAddComponent },
       { path: 'app', component: AppComponent },
       { path: 'login', component: LoginComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },

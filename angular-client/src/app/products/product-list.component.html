@@ -9,6 +9,7 @@
 <div class='card'>
   <div class='card-header'>
     {{pageTitle}}
+    <a routerLink="/prdduct-add"><button class="btn btn-success pull-right" > Add Product</button></a>
   </div>
   <div class='card-body'>
     <div class='row'>
@@ -29,7 +30,6 @@
              *ngIf='products && products.length'>
         <thead>
           <tr>
-            
             <th>Product</th>
             <th>Code</th>
             <th>Available</th>
@@ -45,7 +45,6 @@
         </thead>
         <tbody>
           <tr *ngFor='let product of filteredProducts'>
-          
             <td>
               <a [routerLink]="['/products', product.productId]">
                 {{ product.productName }}
