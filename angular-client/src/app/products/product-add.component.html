@@ -6,18 +6,22 @@
       <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card-body">
-             <form #loginForm="ngForm" (ngSubmit)="addProduct()" >
+             <form #form="ngForm" (ngSubmit)="addProduct(form)">
                <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" #name="ngModel" [class.is-invalid]="name.invalid" class="form-control" name="name" placeholder="Name" [ngModel]="product.name" required>
+                     <input type="text" #name="ngModel" [class.is-invalid]="name.invalid" class="form-control" name="name" placeholder="Name" [ngModel]="product.name" required>
                 </div>
                 <div class="form-group">
                     <label for="inputCode">Code</label>
                   <input type="text" id="inputCode" name="code" class="form-control" placeholder="code" [ngModel]="product.code" required>
                 </div>
                 <div class="form-group">
-                    <label for="inputCode">Code</label>
-                  <input type="text" id="inputCode" name="code" class="form-control" placeholder="code" [ngModel]="product.code" required>
+                    <label for="inputCode">Price</label>
+                  <input type="text" id="inputCode" name="price" class="form-control" placeholder="price" [ngModel]="product.price" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputCode">Upload Image</label>
+                  <input type="file" id="inputCode" name="photo" class="form-control" placeholder="Upload Image" [ngModel]="product.photo" required>
                 </div>
                 <button  class="btn btn-primary" type="submit">Create</button>
                </form>

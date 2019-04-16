@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/entities/productModel';
 import { Router } from '@angular/router';
+import { FormGroup,NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'pm-product-add',
@@ -8,14 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent implements OnInit {
-
-  constructor(  private router: Router) { }
-  product = new ProductModel('name', 'code');
+  url = 'http://localhost:3000/products';
+  addProductForm :FormGroup;
+  constructor(public http: HttpClient,  private router: Router) { }
+  product = new ProductModel('','');
   ngOnInit() {
   }
 
-  addProduct(){
-    console.log("====================");
+  addProduct(form: NgForm){
+    return this.http.post(this.url, form.value);
   }
 
   onBack(): void {
